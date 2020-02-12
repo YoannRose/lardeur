@@ -12,7 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
 
-public class TestLardeur {
+public class lardeurTest {
 	
 	WebDriver driver = new FirefoxDriver();
 	String url= "https://fr.wowhead.com/";
