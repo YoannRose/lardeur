@@ -17,22 +17,21 @@ public class lardeurTest {
 	
 	WebDriver driver;
 	String url= "https://fr.wowhead.com/";
-	
+	String BROWSER=System.getProperty("browser");
 	
 	@Before
 	public void setup() {
-		String BROWSER=System.getProperty("browser");
+		
 		if (BROWSER.equals("Chrome")) {
-			WebDriver driver = new ChromeDriver();
+			driver = new ChromeDriver();
 			driver.get(url);
 		}
 			else if (BROWSER.equals("Firefox")) {
-				WebDriver driver = new FirefoxDriver();
+				driver = new FirefoxDriver();
 				driver.get(url);
 			}
 			
 	
-		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
