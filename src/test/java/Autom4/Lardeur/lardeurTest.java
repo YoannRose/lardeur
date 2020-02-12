@@ -24,13 +24,15 @@ public class lardeurTest {
 		String BROWSER=System.getProperty("browser");
 		if (BROWSER.equals("Chrome")) {
 			WebDriver driver = new ChromeDriver();
+			driver.get(url);
 		}
 			else if (BROWSER.equals("Firefox")) {
 				WebDriver driver = new FirefoxDriver();
+				driver.get(url);
 			}
 			
 	
-		driver.get(url);
+		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
 	
