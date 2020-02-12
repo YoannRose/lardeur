@@ -8,18 +8,28 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
 
 
 public class lardeurTest {
 	
-	WebDriver driver = new FirefoxDriver();
+	WebDriver driver;
 	String url= "https://fr.wowhead.com/";
 	
 	
 	@Before
 	public void setup() {
+		String BROWSER=System.getProperty("browser");
+		if (BROWSER.equals("Chrome")) {
+			WebDriver driver = new ChromeDriver();
+		}
+			else if (BROWSER.equals("Firefox")) {
+				WebDriver driver = new FirefoxDriver();
+			}
+			
+	
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	}
