@@ -32,7 +32,12 @@ public class lardeurTest {
 			PageAccueil page_accueil = PageFactory.initElements(driver, PageAccueil.class);
 			PageRecherche page_recherche = page_accueil.rechercherLardeur(driver, "Lardeur");
 			PagePNJ page_pnj = page_recherche.clickOnLardeur(driver);	
+			
 			PageItem page_item = page_pnj.clickOnItem(driver, "Chahuteurs de cadavre");
+			page_pnj = page_item.get_info(driver, "Chahuteurs de cadavre");
+			
+			page_item = page_pnj.clickOnItem(driver, "Chausses de Lardeur");
+			page_pnj = page_item.get_info(driver, "Chausses de Lardeur");
 		}
 		
 		@After
